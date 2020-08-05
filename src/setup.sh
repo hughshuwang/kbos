@@ -24,7 +24,14 @@ sudo pip3 install tensorflow pillow lxml jupyter matplotlib cython opencv-python
 # wget http://download.tensorflow.org/models/object_detection/ssdlite_mobilenet_v2_coco_2018_05_09.tar.gz
 # tar -xzvf ssdlite_mobilenet_v2_coco_2018_05_09.tar.gz # unzip
 
-# better/slower one
+# DEPRECATED: better/slower one
 # wget http://download.tensorflow.org/models/object_detection/ssd_mobilenet_v1_fpn_shared_box_predictor_640x640_coco14_sync_2018_07_03.tar.gz
 # wget http://download.tensorflow.org/models/object_detection/ssd_resnet50_v1_fpn_shared_box_predictor_640x640_coco14_sync_2018_07_03.tar.gz
 
+# MANUAL: on RPi4B, need to build v4l2loopback manually
+# git clone https://github.com/umlaeute/v4l2loopback
+# cd v4l2loopback
+# make && sudo make install
+# sudo depmod -a
+# sudo modprobe v4l2loopback
+# ref: https://github.com/umlaeute/v4l2loopback
