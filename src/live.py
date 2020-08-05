@@ -33,6 +33,7 @@ PATH_STREAM = "../raw/dlsr/MVI_9124.MOV"
 
 # live from /dev/video0
 PATH_STREAM = 0 # for webcam/DSLR
+MONITOR = False # no streaming preview from cv2
 
 # dslr handling stream forward to 
 # assert "gphoto2 --auto-detect" has the right camera in the list
@@ -115,7 +116,8 @@ while (True):
 
         # simplified ver, prints
         identified = cats_idx[int(classes[0][0])]['name']
-        print('Identified:', identified, '| Scores:', np.round(scores[0][0], 2))
+        score = np.round(scores[0][0], 2)
+        if score > 0.1: print('Identified:', identified, '| Scores:', score)
         if identified in ['airplane', 'keyboard']: break
 
         """
@@ -131,7 +133,7 @@ while (True):
             min_score_thresh=0.85)
         """
 
-        cv2.imshow('stream', img_cropped)
+        if MONITOR: cv2.imshow('stream', img_cropped)
 
     # record stats
     t2 = cv2.getTickCount() # timestamp
@@ -144,6 +146,6 @@ while (True):
 
 # proper way to exit process
 stream.release()
-cv2.destroyAllWindows()
+if MONITOR: cv2.destroyAllWindows()
 
 

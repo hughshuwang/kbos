@@ -14,7 +14,7 @@ python3 ./live.py # monitoring input and running live object detection
 # TODO: check if preset parameters and focus can remain
 
 kill $(pidof ffmpeg) # kill the only one ffmpeg live process 
-sleep 0.07 # give sys short time to get back control of device
+sleep 0.05 # give sys short time to get back control of device
 # gphoto2 --set-config /main/capturesettings/capturemode=1
 # gphoto2 --set-config /main/capturesetting/burstnumber=2
 gphoto2 --capture-image-and-download # shot asap
