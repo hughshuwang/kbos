@@ -17,8 +17,8 @@ kill $(pidof ffmpeg) # kill the only one ffmpeg live process
 sleep 0.07 # give sys short time to get back control of device
 # gphoto2 --set-config /main/capturesettings/capturemode=1
 # gphoto2 --set-config /main/capturesetting/burstnumber=2
-# gphoto2 --capture-image-and-download # shot asap
-# mv capt0000.jpg $(date +%Y-%m-%d-%T).jpg
+gphoto2 --capture-image-and-download # shot asap
+mv capt0000.jpg $(date +%Y-%m-%d-%T).jpg
 # TODO: run a separate cropping script for the image just created
 # TODO: pull the table from flightaware and get enroute info
 # TODO: save this picture to another location in the project
