@@ -17,9 +17,11 @@ if tf.__version__[0] == '2':
     tf.disable_v2_behavior()
 
 # official object_detection repo imports
-PATH_OD = (PATH_PARENT / 'models' / 'research' / 'object_detection')
+PATH_RES = PATH_PARENT / 'models' / 'research'
+PATH_OD  = PATH_RES / 'object_detection'
 sys.path.append(str(PATH_OD))
-from utils import label_map_util
+sys.path.append(str(PATH_RES))
+from object_detection.utils import label_map_util
 
 # sentry recordings
 # NAME_VIDEO = '2020-08-03-212223.webm'
