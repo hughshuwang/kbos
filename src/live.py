@@ -6,9 +6,6 @@ import cv2
 import time
 import argparse
 import subprocess
-import psutil
-# TODO: control a process for monitoring and capture
-# p = subprocess.Popen([sys.executable, '-c', '...'])
 
 import pathlib
 PATH_PARENT = pathlib.Path().cwd().parent
@@ -23,7 +20,6 @@ if tf.__version__[0] == '2':
 PATH_OD = (PATH_PARENT / 'models' / 'research' / 'object_detection')
 sys.path.append(str(PATH_OD))
 from utils import label_map_util
-from utils import visualization_utils as vis_util
 
 # sentry recordings
 # NAME_VIDEO = '2020-08-03-212223.webm'
