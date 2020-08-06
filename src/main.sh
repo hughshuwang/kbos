@@ -3,7 +3,7 @@
 # TODO: in rpi error using v4l2loopback, need to build from source
 
 # load in v4l2 module, only once after reboot
-# sudo modprobe v4l2loopback
+sudo modprobe v4l2loopback
 
 # TODO: get key time zone automatically and only activate monitoring when it's coming
 
@@ -20,7 +20,7 @@ sleep 0.05 # give sys short time to get back control of device
 gphoto2 --capture-image-and-download # shot asap
 mv capt0000.jpg $(date +%Y-%m-%d-%T).jpg
 # TODO: run a separate cropping script for the image just created
-# TODO: pull the table from flightaware and get enroute info
+python3 ./flight.py # show possible flight urls
 # TODO: save this picture to another location in the project
 
 # refs
