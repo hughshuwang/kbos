@@ -4,6 +4,7 @@
 ***@iot @edgeai @tensorflow-lite @opencv @debian @rpi4b @coral @canon***  
 Automatically capture high-res photos for approaching aircrafts on KBOS 22L/R.  
 
+*v1.0 (August 05, 2020): Workable on x86 and ARMv7l, all clear on dependencies, Coral in transit.*  
 
 
 
@@ -14,15 +15,9 @@ Automatically capture high-res photos for approaching aircrafts on KBOS 22L/R.
 
 ## TODO
 
-- Save recordings from DSLR for offline tests `gphoto2 --list-all-files; gphoto2 --get-files=XXX-XXX`
-- Test dependencies and DSLR monitoring on RPi4B
-- Generate a subprocess in python for enabling the monitor mode for DSLR
-- Print out the items exported from the tf module
-- Once an airplane is detected, end the subprocess, generate parameters for the capture, execute multiple shots
-- Save photos in a location, allocation some time for auto-cropping and deletion
-
-- Test the records from DSLR
-- DSLR initialized, capture at the fastest rate and then process right after seq
+- `crop.py` for auto cropping and quality enhancement
+- Asset allocation! with proper naming and suggested flights
+- Prep for LAMP server, simple static live webpage
 
 - (DEP) Sentry for boarder field monitoring, when an airplane is approaching, initialize DSLR
     - Use videos in `raw_sentry` to identify the least power necessary for sentry monitoring
@@ -34,34 +29,24 @@ Automatically capture high-res photos for approaching aircrafts on KBOS 22L/R.
 
 
 
-
 ## Stages Projected & Methodology
 
 This project is projected to have multiple stages:
-- Automatically capture high quality photos for any aircraft on approach on 22L/R 
-- Process photo: object detection and trimming raw inputs
-- Fetch flight data: obtain live arrival data from FlightAware.com and identify flight
-- Gather infomation online on the server side
-- Flexibility to setup in a new environment, parameterized setups
+- DONE: Automatically capture high quality photos for any aircraft on approach on 22L/R 
+- PENDING: Process photo: object detection and trimming raw inputs
+- DONE: Fetch flight data: obtain live arrival data from FlightAware.com and identify flight
+- PENDING: Build a server for live feeds based on LAMP
+- PENDING: Flexibility to setup in a new environment, parameterized setups
 
-
-
-## Dependencies
-
-- [gphoto2](http://www.gphoto.org/doc/manual/) for capture and *preview*: 
-    - `gphoto2 --auto-detect` to check connection
-    - `--hook-script` for processing preview image
-- ffmpeg for video format transition and processing
 
 
 ## Notes
 
-- `pip3 install tensorflow` not working in arch linux
-- Cross compile in x86 for arm debian/raspbian [ref](https://www.tensorflow.org/lite/guide/build_rpi)
-- [objdetapp](https://github.com/datitran/object_detector_app)
-- [tensorflow lite](https://www.tensorflow.org/lite/guide/python)
-- [debianarm](https://learn.adafruit.com/running-tensorflow-lite-on-the-raspberry-pi-4/tensorflow-lite-2-0-setup)
-- [docker](https://zhuanlan.zhihu.com/p/22382728)
-- [docker](https://draveness.me/docker/)
-
+- Saves from DSLR `gphoto2 --list-all-files; gphoto2 --get-files=XXX-XXX`
+- [tensorflow cross-compilation](https://www.tensorflow.org/lite/guide/build_rpi)
+- [objdetapp example](https://github.com/datitran/object_detector_app)
+- [tensorflow lite official guide](https://www.tensorflow.org/lite/guide/python)
+- [tflite on raspian](https://learn.adafruit.com/running-tensorflow-lite-on-the-raspberry-pi-4/tensorflow-lite-2-0-setup)
+- [docker ref](https://zhuanlan.zhihu.com/p/22382728)
+- [docker ref](https://draveness.me/docker/)
 

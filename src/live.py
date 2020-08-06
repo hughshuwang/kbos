@@ -33,7 +33,7 @@ PATH_STREAM = "../raw/dlsr/MVI_9124.MOV"
 
 # live from /dev/video0
 PATH_STREAM = 0 # for webcam/DSLR
-MONITOR = False # no streaming preview from cv2
+MONITOR = True # no streaming preview from cv2
 
 # dslr handling stream forward to 
 # assert "gphoto2 --auto-detect" has the right camera in the list
