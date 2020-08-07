@@ -10,6 +10,10 @@ sudo modprobe v4l2loopback
 # open monitor channel
 gphoto2 --stdout --capture-movie | ffmpeg -i - -vcodec rawvideo -pix_fmt yuv420p -threads 0 -f v4l2 /dev/video0 &
 python3 ./live.py # monitoring input and running live object detection
+
+# check timestamp when breaking
+echo "* TIMESTAMP BREAKING"
+echo $(date +%Y-%m-%d-%T.%N)
 # TODO: tune sensitivity, crop image input
 # TODO: check if preset parameters and focus can remain
 
@@ -17,7 +21,17 @@ kill $(pidof ffmpeg) # kill the only one ffmpeg live process
 sleep 0.05 # give sys short time to get back control of device
 # gphoto2 --set-config /main/capturesettings/capturemode=1
 # gphoto2 --set-config /main/capturesetting/burstnumber=2
+
+# check timestamp when init capture
+echo "* TIMESTAMP INIT CAPTURE"
+echo $(date +%Y-%m-%d-%T.%N)
 gphoto2 --capture-image-and-download # shot asap
+# huge interval between capture and saving 
+# MUST USE MF NOT AF!!!
+
+# check timestamp when saving files
+echo "* TIMESTAMP SAVING"
+echo $(date +%Y-%m-%d-%T.%N)
 mv capt0000.jpg $(date +%Y-%m-%d-%T).jpg
 # TODO: run a separate cropping script for the image just created
 python3 ./flight.py # show possible flight urls
