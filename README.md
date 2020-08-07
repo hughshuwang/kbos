@@ -2,23 +2,21 @@
 
 **Live High-Quality DSLR Capture Module for KBOS 22L/R Arrivals**  
 ***@iot @edgeai @tensorflow-lite @opencv @debian @rpi4b @coral @canon***  
-Automatically capture high-res photos for approaching aircrafts on KBOS 22L/R.  
+Automatically capture high-res photos for aircrafts on KBOS 22L/R Final Approach.  
 
-*v1.0 (August 05, 2020): Workable on x86 and ARMv7l, all clear on dependencies, Coral in transit.*  
+*v1.0 (August 07, 2020): Workable on Debian x86 and ARMv7l, all clear on dependencies.*  
 
 
 
-<img src="./raw/misc/AF789.jpg" alt="drawing" style="width:500px;"/>
+<img src="./raw/misc/cover.gif" alt="drawing" style="width:399px;"/>
 
 
 
 
 ## TODO
 
-- `crop.py` for auto cropping and quality enhancement
-- Asset allocation! with proper naming and suggested flights
+- Flight info updates and auto matching
 - Prep for LAMP server, simple static live webpage
-
 - (DEP) Sentry for boarder field monitoring, when an airplane is approaching, initialize DSLR
     - Use videos in `raw_sentry` to identify the least power necessary for sentry monitoring
     - Test live performance
@@ -33,8 +31,8 @@ Automatically capture high-res photos for approaching aircrafts on KBOS 22L/R.
 
 This project is projected to have multiple stages:
 - DONE: Automatically capture high quality photos for any aircraft on approach on 22L/R 
-- PENDING: Process photo: object detection and trimming raw inputs
-- DONE: Fetch flight data: obtain live arrival data from FlightAware.com and identify flight
+- DONE: Process photo: object detection and trimming raw inputs
+- PENDING: Fetch flight data: obtain live arrival data from FlightAware.com and identify flight
 - PENDING: Build a server for live feeds based on LAMP
 - PENDING: Flexibility to setup in a new environment, parameterized setups
 
