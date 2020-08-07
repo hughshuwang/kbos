@@ -1,11 +1,11 @@
-"""Sentry Monitoring Experiments"""
+# DSLR Live Monitoring and OD
+
 
 import os
 import sys
 import cv2
 import time
 import argparse
-import subprocess
 
 import pathlib
 PATH_PARENT = pathlib.Path().cwd().parent
@@ -22,6 +22,8 @@ PATH_OD  = PATH_RES / 'object_detection'
 sys.path.append(str(PATH_OD))
 sys.path.append(str(PATH_RES))
 from object_detection.utils import label_map_util
+
+
 
 # sentry recordings
 # NAME_VIDEO = '2020-08-03-212223.webm'
@@ -43,6 +45,8 @@ MONITOR = False # no streaming preview from cv2
 # cropping params
 # x_upper, x_lower, y_upper, y_lower = 0.9, 0.1, 0.7, 0.3
 x_upper, x_lower, y_upper, y_lower = 1.0, 0.0, 1.0, 0.0
+
+
 
 # load-in pretrained model
 NAME_MODEL = 'ssdlite_mobilenet_v2_coco_2018_05_09'
@@ -73,6 +77,8 @@ detection_boxes   = detection_graph.get_tensor_by_name('detection_boxes:0')
 detection_scores  = detection_graph.get_tensor_by_name('detection_scores:0')
 detection_classes = detection_graph.get_tensor_by_name('detection_classes:0')
 num_detections    = detection_graph.get_tensor_by_name('num_detections:0')
+
+
 
 # images test
 # img = cv2.imread("../assets/AF789.jpg")
