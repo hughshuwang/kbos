@@ -8,7 +8,7 @@ Automatically capture high-res photos for aircrafts on KBOS 22L/R Final Approach
 
 
 
-<img src="./raw/misc/cover.gif" alt="drawing" style="width:450px;"/>
+<img src="./raw/misc/cover.gif" alt="drawing" style="width:500px;"/>
 
 
 
