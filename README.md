@@ -14,9 +14,9 @@ Automatically capture high-res photos for aircrafts on KBOS 22L/R Final Approach
 
 
 ## TODO
-
+- MySQL/MongoDB: flight/aircraft/airline info for the plane captured, embedded in cyaned.co
+- Integrated with project CYANED.CO: Switch between github.io and RPi server
 - Flight info updates and auto matching
-- Prep for LAMP server, simple static live webpage
 - (DEP) Sentry for boarder field monitoring, when an airplane is approaching, initialize DSLR
     - Use videos in `raw_sentry` to identify the least power necessary for sentry monitoring
     - Test live performance
