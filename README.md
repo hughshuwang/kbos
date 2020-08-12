@@ -14,6 +14,7 @@ Automatically capture high-res photos for aircrafts on KBOS 22L/R Final Approach
 
 
 ## TODO
+- Recompile tflite model for edgetpu and test speed increase
 - MySQL/MongoDB: flight/aircraft/airline info for the plane captured, embedded in cyaned.co
 - Integrated with project CYANED.CO: Switch between github.io and RPi server
 - Flight info updates and auto matching
@@ -40,6 +41,7 @@ This project is projected to have multiple stages:
 
 ## Notes
 
+- Make sure Coral is unplugged when `sudo apt install libedgetpu1-std`
 - Saves from DSLR `gphoto2 --list-all-files; gphoto2 --get-files=XXX-XXX`
 - [tensorflow cross-compilation](https://www.tensorflow.org/lite/guide/build_rpi)
 - [objdetapp example](https://github.com/datitran/object_detector_app)
